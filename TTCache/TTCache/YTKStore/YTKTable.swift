@@ -38,6 +38,8 @@ public struct YTKTable{
         }
     }
     
+    
+    // MARK: -
     internal static func checkTableName(tableName : String!)->Bool{
         if tableName.containsString(" "){
             print("table name : \(tableName) format error")
@@ -62,7 +64,7 @@ public struct YTKTable{
         
         do{
             let changes = try db?.run(tableHandle!.filter(objectIds.contains(ID)).delete()) ?? 0
-            print("table : \(self.name)  number of deleted rows : \(changes)")
+            print("table : <\(self.name!)>  number of deleted rows : \(changes)")
             return changes
         }catch let error{
             throw error
@@ -74,7 +76,7 @@ public struct YTKTable{
         
         do{
             let changes = try db?.run(tableHandle!.filter(ID.like("\(objectId)%")).delete()) ?? 0
-            print("table : \(self.name)  number of deleted rows : \(changes)")
+            print("table : <\(self.name!)>  number of deleted rows : \(changes)")
             return changes
         }catch let error{
             throw error
@@ -109,14 +111,15 @@ public struct YTKTable{
                 if filter.generate().next() == nil{
                     do{
                         try db?.run( tableHandle!.insert(ID <- set.objectId,JSON <- jsonString,UPDATETIME <- NSDate(),CREATEDTIME <- NSDate()) )
-                        print("[insert] id : \(set.objectId)  jsonString : \(set.jsonString!)")
+                        print("[insert] table:<\(name!)> id : \(set.objectId)  jsonString : \(set.jsonString!)")
+                   
                     }catch let error{
                         throw error
                     }
                 }else{
                     do{
                         try db?.run(query.update(JSON <- jsonString,UPDATETIME <- NSDate()))
-                        print("[update] id : \(set.objectId)  jsonString : \(set.jsonString!)")
+                        print("[update] table:<\(name!)> id : \(set.objectId)  jsonString : \(set.jsonString!)")
                     }catch let error{
                         throw error
                     }

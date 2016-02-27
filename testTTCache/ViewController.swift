@@ -25,32 +25,46 @@ class ViewController: UIViewController {
     private func test(){
         
         let hotTable = TTCache.sharedInstance.getTable("hotTable")
+        
+        if hotTable!.isExists {
+            print(" table is exists ")
+        }
+        
+       
         let commTable = TTCache.sharedInstance.getTable("commTable")
+        try! commTable?.put("test", toKey: "t")
+        try! commTable?.delete("dd")
+        try! commTable?.delete("dd")
         
-        try! hotTable?.put("who i am ", toKey: "key1")
-        try! hotTable?.put("i am who", toKey: "key2")
-        try! hotTable?.put("i am who", toKey: "key3")
-        try! hotTable?.put("i am who", toKey: "key4")
-        try! hotTable?.put("i am who", toKey: "key5")
-        try! hotTable?.put("i am who", toKey: "key6")
-        try! hotTable?.put("i am who", toKey: "key7")
-        try! hotTable?.put("i am who", toKey: "key8")
-        try! hotTable?.put("i am who", toKey: "key9")
+        var  value = [String:AnyObject]()
         
-        try! commTable?.put("on", toKey: "key1")
+        value["name"] = "xiaoming"
+        value["age"] = 1
+        try! hotTable?.put(value, toKey: "key1")
+        value["age"] = 2
+        try! hotTable?.put(value, toKey: "key2")
+        value["age"] = 3
+        try! hotTable?.put(value, toKey: "key3")
+        value["age"] = 4
+        try! hotTable?.put(value, toKey: "key4")
+        value["age"] = 5
+        try! hotTable?.put(value, toKey: "key5")
+        value["age"] = 6
+        try! hotTable?.put(value, toKey: "key6")
+        value["age"] = 7
+        try! hotTable?.put(value, toKey: "key7")
+        value["age"] = 8
+        try! hotTable?.put(value, toKey: "key8")
+        value["age"] = 9
+        try! hotTable?.put(value, toKey: "key9")
         
-        
+
+
         let allItem = hotTable?.getAllItems()
         for item in allItem!{
             print(item.itemId)
         }
 
-        TTCache.sharedInstance.trimToSizeByDate(tableName: (hotTable?.name)!, size: 8)
-        
-        let allItem2 = hotTable?.getAllItems()
-        for item in allItem2!{
-            print(item.itemId)
-        }
     }
     
 
