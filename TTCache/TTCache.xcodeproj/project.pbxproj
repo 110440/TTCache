@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4340D411C93D0DB0023C16C /* YTKTable+TT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4340D401C93D0DB0023C16C /* YTKTable+TT.swift */; };
 		D4C662331C8050C6003A27E8 /* YTKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6622B1C8050C6003A27E8 /* YTKConfig.swift */; };
 		D4C662341C8050C6003A27E8 /* YTKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6622C1C8050C6003A27E8 /* YTKError.swift */; };
 		D4C662351C8050C6003A27E8 /* YTKItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6622D1C8050C6003A27E8 /* YTKItem.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4340D401C93D0DB0023C16C /* YTKTable+TT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "YTKTable+TT.swift"; sourceTree = "<group>"; };
 		D4C6622B1C8050C6003A27E8 /* YTKConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTKConfig.swift; sourceTree = "<group>"; };
 		D4C6622C1C8050C6003A27E8 /* YTKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTKError.swift; sourceTree = "<group>"; };
 		D4C6622D1C8050C6003A27E8 /* YTKItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTKItem.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C662411C8050F9003A27E8 /* TTCache.swift */,
+				D4340D401C93D0DB0023C16C /* YTKTable+TT.swift */,
 			);
 			name = core;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				D4C662371C8050C6003A27E8 /* YTKKeyValueStore.swift in Sources */,
 				D4C662421C8050F9003A27E8 /* TTCache.swift in Sources */,
 				D4C662351C8050C6003A27E8 /* YTKItem.swift in Sources */,
+				D4340D411C93D0DB0023C16C /* YTKTable+TT.swift in Sources */,
 				D4C662341C8050C6003A27E8 /* YTKError.swift in Sources */,
 				D4C662381C8050C6003A27E8 /* YTKObject.swift in Sources */,
 			);

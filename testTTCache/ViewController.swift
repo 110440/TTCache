@@ -58,8 +58,6 @@ class ViewController: UIViewController {
         value["age"] = 9
         try! hotTable?.put(value, toKey: "key9")
         
-
-
         let allItem = hotTable?.getAllItems()
         for item in allItem!{
             print(item.itemId)
